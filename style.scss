@@ -1,0 +1,316 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+// .step-content {
+//     display: none;
+// }
+
+// .current {
+//     display: block;
+// }
+
+.container {
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 8px 8px 17px -11px rgba(66, 68, 90, 0.312);
+    margin-bottom: 30px;
+
+    .logo {
+        width: 150px;
+    }
+}
+
+.survey-box {
+    margin: 1.5rem auto;
+    max-width: 750px;
+    width: 100%;
+    // height: calc(100vh - 150px);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 8px 8px 17px -11px rgba(66, 68, 90, 1);
+
+    .banner {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
+
+    form {
+
+        .step-content {
+            text-align: center;
+
+            .survey-content {
+                padding: 20px;
+
+
+                h3 {
+                    font-size: 1.5rem;
+                    text-align: justify;
+                }
+
+                p {
+                    margin: 10px 0;
+                    // font-size: 1.2rem;
+                    text-align: justify;
+                }
+
+                ul {
+                    // display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    list-style-type: none;
+                    text-align: center;
+
+                }
+
+
+                li {
+                    display: inline-block;
+                    margin: 0 10px;
+                }
+
+                input[type="checkbox"][id^="pickImage"] {
+                    display: none;
+                }
+
+                input[type="checkbox"][id^="noneImage"] {
+                    display: none;
+                }
+
+                input[type="checkbox"][id^="elemImage"] {
+                    display: none;
+                }
+
+
+
+                .label-design {
+                    border: 1px solid #e8e8e8;
+                    background-color: #fff;
+                    padding: 20px;
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    margin: 10px auto;
+                    cursor: pointer;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                .label-design::before {
+                    background-color: white;
+                    color: white;
+                    content: " ";
+                    display: block;
+                    border-radius: 50%;
+                    border: 1px solid #b9a082;
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    line-height: 28px;
+                    transition-duration: 0.4s;
+                    transform: scale(0);
+                }
+
+                .label-design img {
+                    height: auto;
+                    width: 100px;
+                    transition-duration: 0.2s;
+                    transform-origin: 50% 50%;
+                }
+
+                :checked+.label-design {
+                    border-color: #b9a082;
+                }
+
+                :checked+.label-design::before {
+                    content: "✓";
+                    background-color: #9d1f36;
+                    transform: scale(1);
+                }
+
+                :checked+.label-design img {
+                    transform: scale(0.9);
+
+                    z-index: -1;
+                }
+
+                .about-customer {
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    .gender-section,
+                    .age,
+                    .pricing {
+
+                        position: relative;
+                        border: 1px solid rgba(0, 0, 0, 0.275);
+                        border-radius: 10px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+
+                        .p-title,
+                        .p-title-fix {
+                            position: absolute;
+                            top: -10px;
+                            left: 10px;
+                            padding: 5px 5px;
+                            margin: 0;
+                            background-color: #fff;
+                            font-size: 1rem;
+                        }
+
+                        .p-title-fix {
+                            font-size: .9rem;
+                            margin: 0 auto;
+                            padding: 0;
+                            width: 90%;
+                        }
+
+                        ul {
+                            display: flex;
+                            justify-content: space-around;
+                            padding: 10px;
+
+                            li {
+                                padding: 10px;
+
+                                label {
+                                    font-size: 14px;
+                                    margin-left: 8px;
+                                }
+
+                                input[type="radio"] {
+                                    width: 15px;
+                                    height: 15px;
+                                    transform: scale(1.5);
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    .gender-section {
+                        width: 100%;
+                    }
+
+                    .age {
+                        display: flex;
+                        align-items: center;
+                        width: 35%;
+
+                        .form-input {
+                            width: 100%;
+                            height: 45px;
+                            text-align: center;
+                        }
+                    }
+
+                    .pricing {
+                        width: 62%;
+
+                        input[type="range"] {
+                            margin-top: 30px;
+                            overflow: hidden;
+                            outline: none;
+                            width: 100%;
+                            background: transparent;
+                            cursor: pointer;
+                        }
+
+
+                        input[type="range"]::-webkit-slider-thumb {
+                            height: 100px;
+                            width: 16px;
+                        }
+
+                        p {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .input-label {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    line-height: 22px;
+                }
+
+                input[type="email"] {
+                    width: 350px;
+                    height: 25px;
+                }
+            }
+        }
+
+        .button-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 30px 0;
+            margin: 5px 0;
+
+            a {
+                display: inline-block;
+                padding: 15px;
+                margin: 0 20px;
+                // background: #b9a082;
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+                cursor: pointer;
+                display: inline-block;
+                color: white;
+                text-decoration: none;
+                transition: 0.3s;
+                width: 200px;
+                border: 1px solid #968065;
+
+                &:hover {
+                    background: #968065;
+                    color: white;
+                }
+            }
+
+            .btn {
+                background-color: #b9a082;
+
+            }
+
+            .back {
+                color: #000;
+            }
+        }
+
+
+
+    }
+}
